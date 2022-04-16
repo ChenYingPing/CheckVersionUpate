@@ -18,7 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     // 新版本检测
-    [VUVersionHelper checkNewVersion];
+//    [VUVersionHelper checkNewVersion];
     return YES;
 }
 

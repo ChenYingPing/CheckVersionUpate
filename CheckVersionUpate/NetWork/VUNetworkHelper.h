@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)versionCheckRequest:(void(^)(VUVersionCheckModel *))completed;
 
++ (void)downloadNewVersion;
+
 @end
 
 NS_ASSUME_NONNULL_END

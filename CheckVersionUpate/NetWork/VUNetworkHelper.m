@@ -15,10 +15,20 @@
     VUVersionCheckModel *model = [VUVersionCheckModel new];
     model.serverVersion = 100;
     model.forceUpdate = NO;
-    model.alertText = @"请立即更新您的app，否则将可能影响您的正常使用";
+    if (model.forceUpdate) {
+        model.alertText = @"请立即更新您的app，否则将影响您的正常使用";
+    }
+    else {
+        model.alertText = @"请立即更新您的app，使用我们的新功能";
+    }
     if (completed) {
         completed(model);
     }
+}
+
++ (void)downloadNewVersion
+{
+    
 }
 
 @end

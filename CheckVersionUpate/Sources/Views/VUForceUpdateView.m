@@ -6,6 +6,7 @@
 //
 
 #import "VUForceUpdateView.h"
+#import "VUNetworkHelper.h"
 
 @implementation VUForceUpdateView
 
@@ -21,11 +22,14 @@
 - (void)updateNow
 {
     [super updateNow];
+    // 去下载对应的资源
+    [VUNetworkHelper downloadNewVersion];
 }
 
 - (void)nextTime
 {
     [super nextTime];
+    exit(0);
 }
 
 @end
