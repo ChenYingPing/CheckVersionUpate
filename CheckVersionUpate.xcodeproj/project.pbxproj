@@ -17,6 +17,13 @@
 		AF35EE59280962E800B77CF0 /* CheckVersionUpateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF35EE58280962E800B77CF0 /* CheckVersionUpateTests.m */; };
 		AF35EE63280962E800B77CF0 /* CheckVersionUpateUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF35EE62280962E800B77CF0 /* CheckVersionUpateUITests.m */; };
 		AF35EE65280962E800B77CF0 /* CheckVersionUpateUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF35EE64280962E800B77CF0 /* CheckVersionUpateUITestsLaunchTests.m */; };
+		AF35EE742809639F00B77CF0 /* VUVersionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AF35EE732809639F00B77CF0 /* VUVersionHelper.m */; };
+		AF35FB52280A5D6C00B77CF0 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AF35FB51280A5D6C00B77CF0 /* Reachability.m */; };
+		AF35FB55280A60FC00B77CF0 /* VUNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AF35FB54280A60FC00B77CF0 /* VUNetworkHelper.m */; };
+		AF35FB58280A614300B77CF0 /* VUVersionCheckModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AF35FB57280A614300B77CF0 /* VUVersionCheckModel.m */; };
+		AF35FB5C280A665E00B77CF0 /* VUForceUpdateView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF35FB5B280A665E00B77CF0 /* VUForceUpdateView.m */; };
+		AF35FB5F280A667700B77CF0 /* VUFreeUpdateView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF35FB5E280A667700B77CF0 /* VUFreeUpdateView.m */; };
+		AF35FB62280A6C2200B77CF0 /* VUUpdateView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF35FB61280A6C2200B77CF0 /* VUUpdateView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +61,20 @@
 		AF35EE5E280962E800B77CF0 /* CheckVersionUpateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheckVersionUpateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF35EE62280962E800B77CF0 /* CheckVersionUpateUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckVersionUpateUITests.m; sourceTree = "<group>"; };
 		AF35EE64280962E800B77CF0 /* CheckVersionUpateUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckVersionUpateUITestsLaunchTests.m; sourceTree = "<group>"; };
+		AF35EE722809639F00B77CF0 /* VUVersionHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VUVersionHelper.h; sourceTree = "<group>"; };
+		AF35EE732809639F00B77CF0 /* VUVersionHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VUVersionHelper.m; sourceTree = "<group>"; };
+		AF35FB50280A5D6500B77CF0 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		AF35FB51280A5D6C00B77CF0 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		AF35FB53280A60FC00B77CF0 /* VUNetworkHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VUNetworkHelper.h; sourceTree = "<group>"; };
+		AF35FB54280A60FC00B77CF0 /* VUNetworkHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VUNetworkHelper.m; sourceTree = "<group>"; };
+		AF35FB56280A614300B77CF0 /* VUVersionCheckModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VUVersionCheckModel.h; sourceTree = "<group>"; };
+		AF35FB57280A614300B77CF0 /* VUVersionCheckModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VUVersionCheckModel.m; sourceTree = "<group>"; };
+		AF35FB5A280A665E00B77CF0 /* VUForceUpdateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VUForceUpdateView.h; sourceTree = "<group>"; };
+		AF35FB5B280A665E00B77CF0 /* VUForceUpdateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VUForceUpdateView.m; sourceTree = "<group>"; };
+		AF35FB5D280A667700B77CF0 /* VUFreeUpdateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VUFreeUpdateView.h; sourceTree = "<group>"; };
+		AF35FB5E280A667700B77CF0 /* VUFreeUpdateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VUFreeUpdateView.m; sourceTree = "<group>"; };
+		AF35FB60280A6C2200B77CF0 /* VUUpdateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VUUpdateView.h; sourceTree = "<group>"; };
+		AF35FB61280A6C2200B77CF0 /* VUUpdateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VUUpdateView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +125,8 @@
 		AF35EE3B280962E600B77CF0 /* CheckVersionUpate */ = {
 			isa = PBXGroup;
 			children = (
+				AF35FB4F280A5D5100B77CF0 /* NetWork */,
+				AF35EE712809633800B77CF0 /* Sources */,
 				AF35EE3C280962E600B77CF0 /* AppDelegate.h */,
 				AF35EE3D280962E600B77CF0 /* AppDelegate.m */,
 				AF35EE3F280962E600B77CF0 /* SceneDelegate.h */,
@@ -134,6 +157,42 @@
 				AF35EE64280962E800B77CF0 /* CheckVersionUpateUITestsLaunchTests.m */,
 			);
 			path = CheckVersionUpateUITests;
+			sourceTree = "<group>";
+		};
+		AF35EE712809633800B77CF0 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AF35EE722809639F00B77CF0 /* VUVersionHelper.h */,
+				AF35EE732809639F00B77CF0 /* VUVersionHelper.m */,
+				AF35FB56280A614300B77CF0 /* VUVersionCheckModel.h */,
+				AF35FB57280A614300B77CF0 /* VUVersionCheckModel.m */,
+				AF35FB59280A65E900B77CF0 /* Views */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		AF35FB4F280A5D5100B77CF0 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				AF35FB50280A5D6500B77CF0 /* Reachability.h */,
+				AF35FB51280A5D6C00B77CF0 /* Reachability.m */,
+				AF35FB53280A60FC00B77CF0 /* VUNetworkHelper.h */,
+				AF35FB54280A60FC00B77CF0 /* VUNetworkHelper.m */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		AF35FB59280A65E900B77CF0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AF35FB5A280A665E00B77CF0 /* VUForceUpdateView.h */,
+				AF35FB5B280A665E00B77CF0 /* VUForceUpdateView.m */,
+				AF35FB5D280A667700B77CF0 /* VUFreeUpdateView.h */,
+				AF35FB5E280A667700B77CF0 /* VUFreeUpdateView.m */,
+				AF35FB60280A6C2200B77CF0 /* VUUpdateView.h */,
+				AF35FB61280A6C2200B77CF0 /* VUUpdateView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,9 +325,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF35FB58280A614300B77CF0 /* VUVersionCheckModel.m in Sources */,
+				AF35FB62280A6C2200B77CF0 /* VUUpdateView.m in Sources */,
 				AF35EE44280962E600B77CF0 /* ViewController.m in Sources */,
 				AF35EE3E280962E600B77CF0 /* AppDelegate.m in Sources */,
+				AF35EE742809639F00B77CF0 /* VUVersionHelper.m in Sources */,
 				AF35EE4F280962E800B77CF0 /* main.m in Sources */,
+				AF35FB55280A60FC00B77CF0 /* VUNetworkHelper.m in Sources */,
+				AF35FB5F280A667700B77CF0 /* VUFreeUpdateView.m in Sources */,
+				AF35FB5C280A665E00B77CF0 /* VUForceUpdateView.m in Sources */,
+				AF35FB52280A5D6C00B77CF0 /* Reachability.m in Sources */,
 				AF35EE41280962E600B77CF0 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,6 +517,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -477,6 +544,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

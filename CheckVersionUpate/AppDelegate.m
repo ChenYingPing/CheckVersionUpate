@@ -6,6 +6,7 @@
 //
 
 #import "AppDelegate.h"
+#import "VUVersionHelper.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    // 新版本检测
+    [VUVersionHelper checkNewVersion];
     return YES;
 }
 

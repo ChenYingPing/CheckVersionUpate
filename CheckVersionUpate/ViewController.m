@@ -6,6 +6,7 @@
 //
 
 #import "ViewController.h"
+#import "VUVersionHelper.h"
 
 @interface ViewController ()
 
@@ -18,5 +19,10 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [super touchesBegan:touches withEvent:event];
+    [VUVersionHelper checkNewVersion];
+}
 
 @end
