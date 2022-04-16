@@ -24,6 +24,9 @@
 		AF35FB5C280A665E00B77CF0 /* VUForceUpdateView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF35FB5B280A665E00B77CF0 /* VUForceUpdateView.m */; };
 		AF35FB5F280A667700B77CF0 /* VUFreeUpdateView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF35FB5E280A667700B77CF0 /* VUFreeUpdateView.m */; };
 		AF35FB62280A6C2200B77CF0 /* VUUpdateView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF35FB61280A6C2200B77CF0 /* VUUpdateView.m */; };
+		AF35FB66280AA62700B77CF0 /* RSAObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = AF35FB65280AA62700B77CF0 /* RSAObjC.m */; };
+		AF35FB69280AB6BA00B77CF0 /* VUDownloadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AF35FB68280AB6BA00B77CF0 /* VUDownloadModel.m */; };
+		AF35FB6C280ABCDF00B77CF0 /* VNDownloadDataTools.m in Sources */ = {isa = PBXBuildFile; fileRef = AF35FB6B280ABCDF00B77CF0 /* VNDownloadDataTools.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,12 @@
 		AF35FB5E280A667700B77CF0 /* VUFreeUpdateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VUFreeUpdateView.m; sourceTree = "<group>"; };
 		AF35FB60280A6C2200B77CF0 /* VUUpdateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VUUpdateView.h; sourceTree = "<group>"; };
 		AF35FB61280A6C2200B77CF0 /* VUUpdateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VUUpdateView.m; sourceTree = "<group>"; };
+		AF35FB64280AA62700B77CF0 /* RSAObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAObjC.h; sourceTree = "<group>"; };
+		AF35FB65280AA62700B77CF0 /* RSAObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAObjC.m; sourceTree = "<group>"; };
+		AF35FB67280AB6BA00B77CF0 /* VUDownloadModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VUDownloadModel.h; sourceTree = "<group>"; };
+		AF35FB68280AB6BA00B77CF0 /* VUDownloadModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VUDownloadModel.m; sourceTree = "<group>"; };
+		AF35FB6A280ABCDF00B77CF0 /* VNDownloadDataTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VNDownloadDataTools.h; sourceTree = "<group>"; };
+		AF35FB6B280ABCDF00B77CF0 /* VNDownloadDataTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VNDownloadDataTools.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +134,7 @@
 		AF35EE3B280962E600B77CF0 /* CheckVersionUpate */ = {
 			isa = PBXGroup;
 			children = (
+				AF35FB63280AA61200B77CF0 /* RSA */,
 				AF35FB4F280A5D5100B77CF0 /* NetWork */,
 				AF35EE712809633800B77CF0 /* Sources */,
 				AF35EE3C280962E600B77CF0 /* AppDelegate.h */,
@@ -166,6 +176,8 @@
 				AF35EE732809639F00B77CF0 /* VUVersionHelper.m */,
 				AF35FB56280A614300B77CF0 /* VUVersionCheckModel.h */,
 				AF35FB57280A614300B77CF0 /* VUVersionCheckModel.m */,
+				AF35FB67280AB6BA00B77CF0 /* VUDownloadModel.h */,
+				AF35FB68280AB6BA00B77CF0 /* VUDownloadModel.m */,
 				AF35FB59280A65E900B77CF0 /* Views */,
 			);
 			path = Sources;
@@ -178,6 +190,8 @@
 				AF35FB51280A5D6C00B77CF0 /* Reachability.m */,
 				AF35FB53280A60FC00B77CF0 /* VUNetworkHelper.h */,
 				AF35FB54280A60FC00B77CF0 /* VUNetworkHelper.m */,
+				AF35FB6A280ABCDF00B77CF0 /* VNDownloadDataTools.h */,
+				AF35FB6B280ABCDF00B77CF0 /* VNDownloadDataTools.m */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -193,6 +207,15 @@
 				AF35FB61280A6C2200B77CF0 /* VUUpdateView.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		AF35FB63280AA61200B77CF0 /* RSA */ = {
+			isa = PBXGroup;
+			children = (
+				AF35FB64280AA62700B77CF0 /* RSAObjC.h */,
+				AF35FB65280AA62700B77CF0 /* RSAObjC.m */,
+			);
+			path = RSA;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,9 +353,12 @@
 				AF35EE44280962E600B77CF0 /* ViewController.m in Sources */,
 				AF35EE3E280962E600B77CF0 /* AppDelegate.m in Sources */,
 				AF35EE742809639F00B77CF0 /* VUVersionHelper.m in Sources */,
+				AF35FB6C280ABCDF00B77CF0 /* VNDownloadDataTools.m in Sources */,
 				AF35EE4F280962E800B77CF0 /* main.m in Sources */,
 				AF35FB55280A60FC00B77CF0 /* VUNetworkHelper.m in Sources */,
+				AF35FB69280AB6BA00B77CF0 /* VUDownloadModel.m in Sources */,
 				AF35FB5F280A667700B77CF0 /* VUFreeUpdateView.m in Sources */,
+				AF35FB66280AA62700B77CF0 /* RSAObjC.m in Sources */,
 				AF35FB5C280A665E00B77CF0 /* VUForceUpdateView.m in Sources */,
 				AF35FB52280A5D6C00B77CF0 /* Reachability.m in Sources */,
 				AF35EE41280962E600B77CF0 /* SceneDelegate.m in Sources */,
