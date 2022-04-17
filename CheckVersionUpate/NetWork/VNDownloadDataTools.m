@@ -79,6 +79,9 @@
 #pragma mark -- clik
 - (void)cancel
 {
+    if (self.isHold == YES) {
+        return;
+    }
     [self.downloadTask cancelByProducingResumeData:^(NSData * _Nullable resumeData) {
         self.resumeData = resumeData;
         self.isHold = YES;
