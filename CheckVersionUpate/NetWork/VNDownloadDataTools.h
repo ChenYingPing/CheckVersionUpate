@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface VNDownloadDataTools : NSObject
 
 + (instancetype)sharedTool;
+
 - (void)downloadAppDataWithUrl:(NSString *)url;
 
 @end

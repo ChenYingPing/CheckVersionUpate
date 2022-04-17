@@ -16,7 +16,7 @@
 @property (nonatomic, strong) NSData *resumeData;
 @property (nonatomic, copy) NSString *filePath;
 @property (nonatomic, weak) VUDownloadProgressView *progressView;
-
+@property (nonatomic, assign) BOOL isHold;
 
 @end
 
@@ -81,13 +81,17 @@
 {
     [self.downloadTask cancelByProducingResumeData:^(NSData * _Nullable resumeData) {
         self.resumeData = resumeData;
+        self.isHold = YES;
     }];
 }
 
 - (void)continueDownload
 {
-    self.downloadTask = [self.session downloadTaskWithResumeData:self.resumeData];
-    [self.downloadTask resume];
+    if (self.isHold) {
+        self.isHold = NO;
+        self.downloadTask = [self.session downloadTaskWithResumeData:self.resumeData];
+        [self.downloadTask resume];
+    }
 }
 
 #pragma mark -- NSURLSessionDownloadDelegate

@@ -28,10 +28,10 @@ NSString *const gPrikey = @"MIICeAIBADANBgkqhkiG9w0BAQEFAASCAmIwggJeAgEAAoGBANNt
     model.serverVersion = 100;
     model.forceUpdate = NO;
     if (model.forceUpdate) {
-        model.alertText = @"请立即更新您的app，否则将影响您的正常使用";
+        model.alertText = @"请立即更新您的app，\n否则将影响您的正常使用";
     }
     else {
-        model.alertText = @"请立即更新您的app，使用我们的新功能";
+        model.alertText = @"请更新您的app，\n去使用我们的新功能";
     }
     if (completed) {
         completed(model);

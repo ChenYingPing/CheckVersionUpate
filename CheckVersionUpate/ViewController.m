@@ -29,7 +29,6 @@
 - (IBAction)checkNewVersion:(id)sender
 {
     [VUVersionHelper checkNewVersion];
-//    [VUUITools showToast:@"下载已完成，自动更新app"];
 }
 
 @end
