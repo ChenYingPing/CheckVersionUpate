@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *downloadUrl;
 // 数据包的 md5 值
 @property (nonatomic, copy) NSString *md5String;
+// 苹果商店App的地址
+@property (nonatomic, copy) NSString *appStoreUrl;
 
 
 
