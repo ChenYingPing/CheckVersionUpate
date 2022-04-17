@@ -10,13 +10,15 @@
 
 @implementation RSAObjC
 
-static NSString *base64_encode_data(NSData *data){
+static NSString *base64_encode_data(NSData *data)
+{
     data = [data base64EncodedDataWithOptions:0];
     NSString *ret = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     return ret;
 }
 
-static NSData *base64_decode(NSString *str){
+static NSData *base64_decode(NSString *str)
+{
     NSData *data = [[NSData alloc] initWithBase64EncodedString:str options:NSDataBase64DecodingIgnoreUnknownCharacters];
     return data;
 }
@@ -27,7 +29,8 @@ static NSData *base64_decode(NSString *str){
  @param pubKey 公钥字符串
  @return 密文，加密后的字符串
  */
-+ (NSString *)encrypt:(NSString *)plaintext PublicKey:(NSString *)pubKey{
++ (NSString *)encrypt:(NSString *)plaintext PublicKey:(NSString *)pubKey
+{
     if (plaintext.length == 0 || pubKey.length == 0) {
         return nil;
     }
@@ -42,7 +45,8 @@ static NSData *base64_decode(NSString *str){
  @param path 公钥文件路径，p12或pem格式
  @return 密文，加密后的字符串
  */
-+ (NSString *)encrypt:(NSString *)plaintext KeyFilePath:(NSString *)path{
++ (NSString *)encrypt:(NSString *)plaintext KeyFilePath:(NSString *)path
+{
     if (plaintext.length == 0 || path.length == 0) {
         return nil;
     }
@@ -65,7 +69,8 @@ static NSData *base64_decode(NSString *str){
  @param privKey 私钥字符串
  @return 明文，解密后的字符串
  */
-+ (NSString *)decrypt:(NSString *)ciphertext PrivateKey:(NSString *)privKey{
++ (NSString *)decrypt:(NSString *)ciphertext PrivateKey:(NSString *)privKey
+{
     if (ciphertext.length == 0 || privKey.length == 0) {
         return nil;
     }
@@ -84,7 +89,8 @@ static NSData *base64_decode(NSString *str){
  @param pwd 私钥文件的密码
  @return 明文，解密后的字符串
  */
-+ (NSString *)decrypt:(NSString *)ciphertext KeyFilePath:(NSString *)path FilePwd:(NSString *)pwd{
++ (NSString *)decrypt:(NSString *)ciphertext KeyFilePath:(NSString *)path FilePwd:(NSString *)pwd
+{
     if (ciphertext.length == 0 || path.length == 0) {
         return nil;
     }
@@ -102,7 +108,8 @@ static NSData *base64_decode(NSString *str){
     return result;
 }
 
-+ (NSString *)readPubKeyFromPem:(NSString *)filePath{
++ (NSString *)readPubKeyFromPem:(NSString *)filePath
+{
     NSString *pemStr = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     if (pemStr.length == 0) {
         return nil;
@@ -118,7 +125,8 @@ static NSData *base64_decode(NSString *str){
     return pemStr;
 }
 
-+ (NSString *)readPrivKeyFromPem:(NSString *)filePath{
++ (NSString *)readPrivKeyFromPem:(NSString *)filePath
+{
     NSString *pemStr = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     if (pemStr.length == 0) {
         return nil;
@@ -138,7 +146,8 @@ static NSData *base64_decode(NSString *str){
     return pemStr;
 }
 
-+ (SecKeyRef)getPublicKeyRefWithContentsOfFile:(NSString *)filePath{
++ (SecKeyRef)getPublicKeyRefWithContentsOfFile:(NSString *)filePath
+{
     NSData *certData = [NSData dataWithContentsOfFile:filePath];
     if (!certData) {
         return NULL;
@@ -164,7 +173,8 @@ static NSData *base64_decode(NSString *str){
     return key;
 }
 
-+ (NSString *)encryptString:(NSString *)str publicKeyRef:(SecKeyRef)publicKeyRef{
++ (NSString *)encryptString:(NSString *)str publicKeyRef:(SecKeyRef)publicKeyRef
+{
     if(!publicKeyRef){
         return nil;
     }
@@ -176,7 +186,8 @@ static NSData *base64_decode(NSString *str){
     return ret;
 }
 
-+ (SecKeyRef)getPrivateKeyRefWithContentsOfFile:(NSString *)filePath password:(NSString*)password{
++ (SecKeyRef)getPrivateKeyRefWithContentsOfFile:(NSString *)filePath password:(NSString*)password
+{
     NSData *p12Data = [NSData dataWithContentsOfFile:filePath];
     if (!p12Data) {
         return NULL;
@@ -204,7 +215,8 @@ static NSData *base64_decode(NSString *str){
     return privateKeyRef;
 }
 
-+ (NSString *)decryptString:(NSString *)str privateKeyRef:(SecKeyRef)privKeyRef{
++ (NSString *)decryptString:(NSString *)str privateKeyRef:(SecKeyRef)privKeyRef
+{
     NSData *data = [[NSData alloc] initWithBase64EncodedString:str options:NSDataBase64DecodingIgnoreUnknownCharacters];
     if (!privKeyRef) {
         return nil;
@@ -214,7 +226,8 @@ static NSData *base64_decode(NSString *str){
     return ret;
 }
 
-+ (NSData *)encryptData:(NSData *)data publicKey:(NSString *)pubKey{
++ (NSData *)encryptData:(NSData *)data publicKey:(NSString *)pubKey
+{
     if(!data || !pubKey){
         return nil;
     }
@@ -225,7 +238,8 @@ static NSData *base64_decode(NSString *str){
     return enData;
 }
 
-+ (SecKeyRef)addPublicKey:(NSString *)key{
++ (SecKeyRef)addPublicKey:(NSString *)key
+{
     NSRange spos = [key rangeOfString:@"-----BEGIN PUBLIC KEY-----"];
     NSRange epos = [key rangeOfString:@"-----END PUBLIC KEY-----"];
     if(spos.location != NSNotFound && epos.location != NSNotFound){
@@ -287,7 +301,8 @@ static NSData *base64_decode(NSString *str){
     return keyRef;
 }
 
-+ (NSData *)stripPublicKeyHeader:(NSData *)d_key{
++ (NSData *)stripPublicKeyHeader:(NSData *)d_key
+{
     // Skip ASN.1 public key header
     if (d_key == nil) return(nil);
     
@@ -320,7 +335,8 @@ static NSData *base64_decode(NSString *str){
     return ([NSData dataWithBytes:&c_key[idx] length:len - idx]);
 }
 
-+ (NSData *)encryptData:(NSData *)data withKeyRef:(SecKeyRef)keyRef{
++ (NSData *)encryptData:(NSData *)data withKeyRef:(SecKeyRef)keyRef
+{
     if(!keyRef){
         return nil;
     }
@@ -332,7 +348,7 @@ static NSData *base64_decode(NSString *str){
     size_t src_block_size = block_size - 11;
     
     NSMutableData *ret = [[NSMutableData alloc] init];
-    for(int idx=0; idx<srclen; idx+=src_block_size){
+    for(int idx=0; idx<srclen; idx+=src_block_size) {
         //NSLog(@"%d/%d block_size: %d", idx, (int)srclen, (int)block_size);
         size_t data_len = srclen - idx;
         if(data_len > src_block_size){
@@ -361,7 +377,8 @@ static NSData *base64_decode(NSString *str){
     return ret;
 }
 
-+ (NSData *)decryptData:(NSData *)data privateKey:(NSString *)privKey{
++ (NSData *)decryptData:(NSData *)data privateKey:(NSString *)privKey
+{
     if(!data || !privKey){
         return nil;
     }
@@ -372,7 +389,8 @@ static NSData *base64_decode(NSString *str){
     return deData;
 }
 
-+ (SecKeyRef)addPrivateKey:(NSString *)key{
++ (SecKeyRef)addPrivateKey:(NSString *)key
+{
     NSRange spos = [key rangeOfString:@"-----BEGIN RSA PRIVATE KEY-----"];
     NSRange epos = [key rangeOfString:@"-----END RSA PRIVATE KEY-----"];
     if(spos.location != NSNotFound && epos.location != NSNotFound){
@@ -433,7 +451,8 @@ static NSData *base64_decode(NSString *str){
     return keyRef;
 }
 
-+ (NSData *)stripPrivateKeyHeader:(NSData *)d_key{
++ (NSData *)stripPrivateKeyHeader:(NSData *)d_key
+{
     // Skip ASN.1 private key header
     if (d_key == nil) return(nil);
     
@@ -470,7 +489,8 @@ static NSData *base64_decode(NSString *str){
     return [d_key subdataWithRange:NSMakeRange(idx, c_len)];
 }
 
-+ (NSData *)decryptData:(NSData *)data withKeyRef:(SecKeyRef)keyRef{
++ (NSData *)decryptData:(NSData *)data withKeyRef:(SecKeyRef)keyRef
+{
     if(!keyRef){
         return nil;
     }

@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 // 底部升级按钮文案
 @property (nonatomic, copy) NSString *leftButtonText;
 @property (nonatomic, copy) NSString *rightButtonText;
+// 无新版本间隔多少天进行弹窗
+@property (nonatomic, assign) double times;
 
 @end
 

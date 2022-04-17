@@ -15,7 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) VUVersionCheckModel *model;
 
 - (instancetype)initWithModel:(VUVersionCheckModel *)model;
+
 - (void)updateNow;
+
 - (void)nextTime;
 
 @end

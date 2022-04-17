@@ -35,14 +35,10 @@
     label.textAlignment = NSTextAlignmentCenter;
     
     self.pv = [[UIProgressView alloc] initWithFrame:CGRectMake(10, 120, 220, 0)];
-    //设置类型
-    //[pv setProgressViewStyle:UIProgressViewStyleBar];
-    //设置颜色
+    // 设置颜色
     [self.pv setTrackTintColor:[UIColor blueColor]];
     [self.pv setProgressTintColor:[UIColor redColor]];
-    //设置图片
-    //[pv setTrackImage:];
-    //[pv setProgressImage:];
+    // 设置图片
     [self addSubview:self.pv];
     
     self.stopButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 300, 100, 40)];

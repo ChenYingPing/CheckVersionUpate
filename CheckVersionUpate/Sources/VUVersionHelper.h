@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface VUVersionHelper : NSObject
 
-/// 检测新版本
+// 检测新版本
 + (void)checkNewVersion;
 
 @end

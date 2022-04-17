@@ -27,7 +27,7 @@ static NSString *const ServerVersion = @"ServerVersion";
 
 + (BOOL)validateTime:(VUVersionCheckModel *)model
 {
-    // 暂时去掉7天内没有新版本不弹窗判断，方便调试
+    // 暂时去掉7天内没有新版本不弹窗判断，方便调试, 7天这个时间也可以由服务端来下发，进行控制
 //    NSTimeInterval time = [[NSDate date] timeIntervalSince1970];
 //    double value = [[[NSUserDefaults standardUserDefaults] objectForKey:LastUpdateTime] doubleValue];
 //    NSInteger version = [[[NSUserDefaults standardUserDefaults] objectForKey:ServerVersion] integerValue];

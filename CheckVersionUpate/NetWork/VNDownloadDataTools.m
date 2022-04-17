@@ -35,13 +35,13 @@
 
 - (void)downloadAppDataWithUrl:(NSString *)url
 {
-    ///1.创建NSURLSession默认配置
+    // 1.创建NSURLSession默认配置
     NSURLSessionConfiguration *cfg = [NSURLSessionConfiguration defaultSessionConfiguration];
 
-    ///2.创建NSURLSession,设置代理和队列
+    // 2.创建NSURLSession,设置代理和队列
     self.session = [NSURLSession sessionWithConfiguration:cfg delegate:self delegateQueue:[NSOperationQueue mainQueue]];
 
-    ///3.创建请求
+    // 3.创建请求
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     NSURLSessionDownloadTask *downloadTask = [self.session downloadTaskWithRequest:request];
     self.downloadTask = downloadTask;
@@ -77,6 +77,7 @@
 }
 
 #pragma mark -- clik
+
 - (void)cancel
 {
     if (self.isHold == YES) {
@@ -98,10 +99,11 @@
 }
 
 #pragma mark -- NSURLSessionDownloadDelegate
-//该方法下载成功和失败都会回调，只是失败的是error是有值的，
+
+// 该方法下载成功和失败都会回调，只是失败的是error是有值的，
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(nullable NSError *)error
 {
-    //进入后台失去连接,恢复下载
+    // 进入后台失去连接,恢复下载
     if (error.code == -1001) {
         if ([error.userInfo objectForKey:NSURLSessionDownloadTaskResumeData]) {
             NSData *resumeData = [error.userInfo objectForKey:NSURLSessionDownloadTaskResumeData];
@@ -117,7 +119,7 @@
  */
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location
 {
-    //把文件移动我们指定的路径下
+    // 把文件移动我们指定的路径下
     NSFileManager *manager = [NSFileManager defaultManager];
     [manager moveItemAtPath:location.path toPath:self.filePath error:nil];
     
