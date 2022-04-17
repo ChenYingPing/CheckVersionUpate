@@ -90,6 +90,7 @@
 		AF35FB6E280AEF1A00B77CF0 /* VUDownloadProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VUDownloadProgressView.m; sourceTree = "<group>"; };
 		AF35FB71280AF3A500B77CF0 /* VUUITools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VUUITools.h; sourceTree = "<group>"; };
 		AF35FB72280AF3A500B77CF0 /* VUUITools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VUUITools.m; sourceTree = "<group>"; };
+		AF35FB74280BF0FA00B77CF0 /* constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constant.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +233,7 @@
 			children = (
 				AF35FB71280AF3A500B77CF0 /* VUUITools.h */,
 				AF35FB72280AF3A500B77CF0 /* VUUITools.m */,
+				AF35FB74280BF0FA00B77CF0 /* constant.h */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
