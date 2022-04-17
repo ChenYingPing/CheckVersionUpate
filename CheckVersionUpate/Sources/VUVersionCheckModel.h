@@ -20,7 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 // 背景图
 @property (nonatomic, copy) NSString *imageUrl;
 // 底部升级按钮文案
-@property (nonatomic, copy) NSString *buttonText;
+@property (nonatomic, copy) NSString *leftButtonText;
+@property (nonatomic, copy) NSString *rightButtonText;
 
 @end
 
