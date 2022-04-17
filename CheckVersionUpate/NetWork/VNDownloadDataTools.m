@@ -6,6 +6,8 @@
 //
 
 #import "VNDownloadDataTools.h"
+#import "VUDownloadProgressView.h"
+#import "VUUITools.h"
 
 @interface VNDownloadDataTools () <NSURLSessionDelegate>
 
@@ -13,6 +15,8 @@
 @property (nonatomic, strong) NSURLSessionDownloadTask *downloadTask;
 @property (nonatomic, strong) NSData *resumeData;
 @property (nonatomic, copy) NSString *filePath;
+@property (nonatomic, weak) VUDownloadProgressView *progressView;
+
 
 @end
 
@@ -54,18 +58,33 @@
         // 在 Document 目录下创建一个 head 目录
         [fileManager createDirectoryAtPath:dataFilePath withIntermediateDirectories:YES attributes:nil error:nil];
     }
-    self.filePath = [dataFilePath stringByAppendingString:@"xxx.tmp"];
+    self.filePath = [dataFilePath stringByAppendingString:@"/xxx.tmp"];
+    
+    // 5.显示下载进度view
+    VUDownloadProgressView *view = [[VUDownloadProgressView alloc] init];
+    UIWindow *keyWindow = [VUUITools getKeyWindow];
+    view.frame = CGRectMake(0, 0, 240, 400);
+    view.center = keyWindow.center;
+    [keyWindow addSubview:view];
+    self.progressView = view;
+    __weak VNDownloadDataTools *weakObj = self;
+    view.stopDownload = ^{
+        [weakObj cancel];
+    };
+    view.continueDownload = ^{
+        [weakObj continueDownload];
+    };
 }
 
 #pragma mark -- clik
-- (void)cancel:(id)sender
+- (void)cancel
 {
     [self.downloadTask cancelByProducingResumeData:^(NSData * _Nullable resumeData) {
         self.resumeData = resumeData;
     }];
 }
 
-- (void)continueDownload:(id)sender
+- (void)continueDownload
 {
     self.downloadTask = [self.session downloadTaskWithResumeData:self.resumeData];
     [self.downloadTask resume];
@@ -73,8 +92,8 @@
 
 #pragma mark -- NSURLSessionDownloadDelegate
 //该方法下载成功和失败都会回调，只是失败的是error是有值的，
-- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(nullable NSError *)error{
-    NSLog(@"%@",error);
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(nullable NSError *)error
+{
     //进入后台失去连接,恢复下载
     if (error.code == -1001) {
         if ([error.userInfo objectForKey:NSURLSessionDownloadTaskResumeData]) {
@@ -94,7 +113,9 @@
     //把文件移动我们指定的路径下
     NSFileManager *manager = [NSFileManager defaultManager];
     [manager moveItemAtPath:location.path toPath:self.filePath error:nil];
-    NSLog(@"--------==%@",location);
+    
+    [VUUITools showToast:@"下载已完成，自动更新app后即可使用"];
+    [self.progressView removeFromSuperview];
 }
 
 /**
@@ -110,9 +131,11 @@
  totalBytesWritten:(int64_t)totalBytesWritten
 totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
 {
-    NSLog(@"bytesWritten %lld \n totalBytesWritten %lld \n totalBytesExpectedToWrite %lld ",bytesWritten,totalBytesWritten , totalBytesExpectedToWrite);
-
     float progress = (double)totalBytesWritten/totalBytesExpectedToWrite;
+    
+    // 当前下载进度，可以用作UI进度条更新
+    NSLog(@"当前下载进度 = %f",progress);
+    self.progressView.progress = progress;
 }
 
 /**

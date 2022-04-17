@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 #import "VUVersionHelper.h"
+#import "VUUITools.h"
 
 @interface ViewController ()
 
@@ -25,10 +26,10 @@
     [VUVersionHelper checkNewVersion];
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+- (IBAction)checkNewVersion:(id)sender
 {
-    [super touchesBegan:touches withEvent:event];
     [VUVersionHelper checkNewVersion];
+//    [VUUITools showToast:@"下载已完成，自动更新app"];
 }
 
 @end

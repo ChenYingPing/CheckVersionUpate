@@ -14,7 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) VUVersionCheckModel *model;
 
-+ (UIWindow *)getKeyWindow;
 - (instancetype)initWithModel:(VUVersionCheckModel *)model;
 - (void)updateNow;
 - (void)nextTime;

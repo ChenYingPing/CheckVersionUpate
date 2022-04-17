@@ -7,13 +7,14 @@
 
 #import "VUForceUpdateView.h"
 #import "VUNetworkHelper.h"
+#import "VUUITools.h"
 
 @implementation VUForceUpdateView
 
 + (void)show:(VUVersionCheckModel *)model
 {
     VUForceUpdateView *view = [[VUForceUpdateView alloc] initWithModel:model];
-    UIWindow *keyWindow = [self getKeyWindow];
+    UIWindow *keyWindow = [VUUITools getKeyWindow];
     view.frame = CGRectMake(0, 0, 270, 400);
     view.center = keyWindow.center;
     [keyWindow addSubview:view];

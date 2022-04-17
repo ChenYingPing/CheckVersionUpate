@@ -7,6 +7,7 @@
 
 #import "VUFreeUpdateView.h"
 #import "VUNetworkHelper.h"
+#import "VUUITools.h"
 
 static NSString *const LastUpdateTime = @"LastUpdateTime";
 static NSString *const ServerVersion = @"ServerVersion";
@@ -17,7 +18,7 @@ static NSString *const ServerVersion = @"ServerVersion";
 {
     if ([self validateTime:model]) {
         VUFreeUpdateView *view = [[VUFreeUpdateView alloc] initWithModel:model];
-        UIWindow *keyWindow = [self getKeyWindow];
+        UIWindow *keyWindow = [VUUITools getKeyWindow];
         view.frame = CGRectMake(0, 0, 270, 400);
         view.center = keyWindow.center;
         [keyWindow addSubview:view];
@@ -26,12 +27,12 @@ static NSString *const ServerVersion = @"ServerVersion";
 
 + (BOOL)validateTime:(VUVersionCheckModel *)model
 {
-    NSTimeInterval time = [[NSDate date] timeIntervalSince1970];
-    double value = [[[NSUserDefaults standardUserDefaults] objectForKey:LastUpdateTime] doubleValue];
-    NSInteger version = [[[NSUserDefaults standardUserDefaults] objectForKey:ServerVersion] integerValue];
-    if (value > 0 && (time - value) < 7 * 24 * 3600 && version >= model.serverVersion) { // 7 天内, 且没有新版本，不弹窗
-        return NO;
-    }
+//    NSTimeInterval time = [[NSDate date] timeIntervalSince1970];
+//    double value = [[[NSUserDefaults standardUserDefaults] objectForKey:LastUpdateTime] doubleValue];
+//    NSInteger version = [[[NSUserDefaults standardUserDefaults] objectForKey:ServerVersion] integerValue];
+//    if (value > 0 && (time - value) < 7 * 24 * 3600 && version >= model.serverVersion) { // 7 天内, 且没有新版本，不弹窗
+//        return NO;
+//    }
     return YES;
 }
 

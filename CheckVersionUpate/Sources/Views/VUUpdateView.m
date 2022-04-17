@@ -6,25 +6,9 @@
 //
 
 #import "VUUpdateView.h"
+#import "VUUITools.h"
 
 @implementation VUUpdateView
-
-+ (UIWindow *)getKeyWindow
-{
-    UIWindow *window = nil;
-    if (@available(iOS 13.0, *)) {
-        for (UIWindowScene* windowScene in [UIApplication sharedApplication].connectedScenes) {
-            if (windowScene.activationState == UISceneActivationStateForegroundActive) {
-                window = windowScene.windows.firstObject;
-                break;
-            }
-        }
-    }
-    else {
-        window = [UIApplication sharedApplication].keyWindow;
-    }
-    return window;
-}
 
 - (instancetype)initWithModel:(VUVersionCheckModel *)model
 {
@@ -48,7 +32,7 @@
     }];
     [actionSheetController addAction:commentAction];
     [actionSheetController addAction:cancelAction];
-    [[VUUpdateView getKeyWindow].rootViewController presentViewController:actionSheetController animated:YES completion:nil];
+    [[VUUITools getKeyWindow].rootViewController presentViewController:actionSheetController animated:YES completion:nil];
 }
 
 - (void)updateNow

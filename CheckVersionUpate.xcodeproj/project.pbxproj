@@ -27,6 +27,8 @@
 		AF35FB66280AA62700B77CF0 /* RSAObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = AF35FB65280AA62700B77CF0 /* RSAObjC.m */; };
 		AF35FB69280AB6BA00B77CF0 /* VUDownloadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AF35FB68280AB6BA00B77CF0 /* VUDownloadModel.m */; };
 		AF35FB6C280ABCDF00B77CF0 /* VNDownloadDataTools.m in Sources */ = {isa = PBXBuildFile; fileRef = AF35FB6B280ABCDF00B77CF0 /* VNDownloadDataTools.m */; };
+		AF35FB6F280AEF1B00B77CF0 /* VUDownloadProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF35FB6E280AEF1A00B77CF0 /* VUDownloadProgressView.m */; };
+		AF35FB73280AF3A500B77CF0 /* VUUITools.m in Sources */ = {isa = PBXBuildFile; fileRef = AF35FB72280AF3A500B77CF0 /* VUUITools.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,10 @@
 		AF35FB68280AB6BA00B77CF0 /* VUDownloadModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VUDownloadModel.m; sourceTree = "<group>"; };
 		AF35FB6A280ABCDF00B77CF0 /* VNDownloadDataTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VNDownloadDataTools.h; sourceTree = "<group>"; };
 		AF35FB6B280ABCDF00B77CF0 /* VNDownloadDataTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VNDownloadDataTools.m; sourceTree = "<group>"; };
+		AF35FB6D280AEF1A00B77CF0 /* VUDownloadProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VUDownloadProgressView.h; sourceTree = "<group>"; };
+		AF35FB6E280AEF1A00B77CF0 /* VUDownloadProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VUDownloadProgressView.m; sourceTree = "<group>"; };
+		AF35FB71280AF3A500B77CF0 /* VUUITools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VUUITools.h; sourceTree = "<group>"; };
+		AF35FB72280AF3A500B77CF0 /* VUUITools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VUUITools.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,7 @@
 		AF35EE3B280962E600B77CF0 /* CheckVersionUpate */ = {
 			isa = PBXGroup;
 			children = (
+				AF35FB70280AF38C00B77CF0 /* Tools */,
 				AF35FB63280AA61200B77CF0 /* RSA */,
 				AF35FB4F280A5D5100B77CF0 /* NetWork */,
 				AF35EE712809633800B77CF0 /* Sources */,
@@ -205,6 +212,8 @@
 				AF35FB5E280A667700B77CF0 /* VUFreeUpdateView.m */,
 				AF35FB60280A6C2200B77CF0 /* VUUpdateView.h */,
 				AF35FB61280A6C2200B77CF0 /* VUUpdateView.m */,
+				AF35FB6D280AEF1A00B77CF0 /* VUDownloadProgressView.h */,
+				AF35FB6E280AEF1A00B77CF0 /* VUDownloadProgressView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,6 +225,15 @@
 				AF35FB65280AA62700B77CF0 /* RSAObjC.m */,
 			);
 			path = RSA;
+			sourceTree = "<group>";
+		};
+		AF35FB70280AF38C00B77CF0 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				AF35FB71280AF3A500B77CF0 /* VUUITools.h */,
+				AF35FB72280AF3A500B77CF0 /* VUUITools.m */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,12 +366,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF35FB73280AF3A500B77CF0 /* VUUITools.m in Sources */,
 				AF35FB58280A614300B77CF0 /* VUVersionCheckModel.m in Sources */,
 				AF35FB62280A6C2200B77CF0 /* VUUpdateView.m in Sources */,
 				AF35EE44280962E600B77CF0 /* ViewController.m in Sources */,
 				AF35EE3E280962E600B77CF0 /* AppDelegate.m in Sources */,
 				AF35EE742809639F00B77CF0 /* VUVersionHelper.m in Sources */,
 				AF35FB6C280ABCDF00B77CF0 /* VNDownloadDataTools.m in Sources */,
+				AF35FB6F280AEF1B00B77CF0 /* VUDownloadProgressView.m in Sources */,
 				AF35EE4F280962E800B77CF0 /* main.m in Sources */,
 				AF35FB55280A60FC00B77CF0 /* VUNetworkHelper.m in Sources */,
 				AF35FB69280AB6BA00B77CF0 /* VUDownloadModel.m in Sources */,
